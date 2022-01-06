@@ -1,17 +1,11 @@
 import React, { useState } from "react";
 import { InputGroup, FormControl } from "react-bootstrap";
 import "../style.css"
-import { useEffect } from "react";
 import DataTable from '../../components/DataTable/DataTable'
 
 
 export default function Search() {
     const [serarchTerm, setSearchTerm] = useState("");
-
-
-    useEffect(() => {
-        localStorage.setItem('SearchKey', serarchTerm ? serarchTerm : '');
-    }, [serarchTerm])
 
     return (
         <div className="Search">
@@ -34,7 +28,7 @@ export default function Search() {
                     </InputGroup>
                 </div>
                 <div>
-                    <DataTable />
+                    <DataTable serarchKey={serarchTerm} />
                 </div>
             </div>
         </div >

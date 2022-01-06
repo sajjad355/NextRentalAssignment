@@ -4,7 +4,7 @@ import BookProduct from '../BookProduct/Booking'
 import ReturnProduct from '../ReturnProduct/Return'
 import "../style.css"
 
-export default function DataTable() {
+export default function DataTable(props) {
     const [isOpen, setIsOpen] = useState(false);
     const [isOpenReturn, setIsOpenReturn] = useState(false);
 
@@ -35,10 +35,10 @@ export default function DataTable() {
                         </thead>
                         <tbody>
                             {JSON.parse(localStorage.getItem("data")).filter((val) => {
-                                if (localStorage.getItem('SearchKey') === "" || localStorage.getItem('SearchKey') === null || localStorage.getItem('SearchKey') === '') {
+                                if (props.serarchKey === "") {
                                     return val;
                                 }
-                                else if (val.name.toLowerCase().includes(localStorage.getItem('SearchKey').toLowerCase())) {
+                                else if (val.name.toLowerCase().includes(props.serarchKey.toLowerCase())) {
                                     return val;
                                 }
                             }).map((m, index) => (
