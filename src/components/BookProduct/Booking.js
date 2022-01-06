@@ -38,7 +38,7 @@ export default function BookProduct(props) {
             var currentDate = new Date();
             console.log(currentDate);
             var startingDate = new Date(fromDate);
-            var a = data.filter(item => item.name + "/" + item.code === productBooking)
+            var a = JSON.parse(localStorage.getItem("data")).filter(item => item.name + "/" + item.code === productBooking)
             const date1 = new Date(toDate);
             const date2 = new Date(fromDate);
             const diffTime = Math.abs(date2 - date1);
@@ -87,7 +87,7 @@ export default function BookProduct(props) {
                         >
                             <option value="" disabled>-- Product --</option>
 
-                            {data.map((val) => (
+                            {JSON.parse(localStorage.getItem("data")).map((val) => (
                                 <option text={val.code}>
                                     {val.name}/{val.code}
                                 </option>
@@ -97,7 +97,7 @@ export default function BookProduct(props) {
                     <br />
 
                     {/* Information Start */}
-                    {data.filter(product => product.name + "/" + product.code === productBooking).map(products => (
+                    {JSON.parse(localStorage.getItem("data")).filter(product => product.name + "/" + product.code === productBooking).map(products => (
                         <p style={{ fontSize: 22, fontFamily: "Lucida Console" }}>
                             <p>Name:&nbsp;{products.name}</p>
                             <p>Rental Period:&nbsp;{products.minimum_rent_period}</p>{console.log(products.mileage)}

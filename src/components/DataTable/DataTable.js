@@ -35,7 +35,7 @@ export default function DataTable() {
                             </tr>
                         </thead>
                         <tbody>
-                            {data.filter((val) => {
+                            {JSON.parse(localStorage.getItem("data")).filter((val) => {
                                 if (localStorage.getItem('SearchKey') === "" || localStorage.getItem('SearchKey') === null || localStorage.getItem('SearchKey') === '') {
                                     return val;
                                 }

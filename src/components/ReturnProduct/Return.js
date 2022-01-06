@@ -32,7 +32,7 @@ export default function ReturnProduct(props) {
     function toggleModalReturnValue() {
         if (product && amount) {
             setIsOpenReturnvalue(!isOpenReturnValue);
-            var a = data.filter(item => item.name + "/" + item.code === product)
+            var a = JSON.parse(localStorage.getItem("data")).filter(item => item.name + "/" + item.code === product)
             setamountPreview(a[0].price * amount);
             setRepair(a[0].needing_repair === "false" ? "No" : "Yes");
             setRentPeriod(a[0].minimum_rent_period);
@@ -68,7 +68,7 @@ export default function ReturnProduct(props) {
                         >
                             <option value="" disabled>-- Product --</option>
 
-                            {data.map((val) => (
+                            {JSON.parse(localStorage.getItem("data")).map((val) => (
                                 <option text={val.code}>
                                     {val.name}/{val.code}
                                 </option>
@@ -78,7 +78,7 @@ export default function ReturnProduct(props) {
                     <br />
 
                     {/* Information Start */}
-                    {data.filter(allProduct => allProduct.name + "/" + allProduct.code === product).map(products => (
+                    {JSON.parse(localStorage.getItem("data")).filter(allProduct => allProduct.name + "/" + allProduct.code === product).map(products => (
                         <p style={{ fontSize: 22, fontFamily: "Lucida Console" }}>
                             <p>Name:&nbsp;{products.name}</p>
                             <p>Rental Period:&nbsp;{products.minimum_rent_period}</p>
