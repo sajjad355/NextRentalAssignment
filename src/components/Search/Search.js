@@ -28,7 +28,9 @@ export default function Search() {
                     </InputGroup>
                 </div>
                 <div>
-                    <DataTable serarchKey={serarchTerm} />
+                    <DataTable
+                        searchKey={serarchTerm}
+                    />
                 </div>
             </div>
         </div >
