@@ -11,9 +11,6 @@ export default function Search() {
 
     useEffect(() => {
         localStorage.setItem('SearchKey', serarchTerm ? serarchTerm : '');
-        <div>
-            <DataTable />
-        </div>
     }, [serarchTerm])
 
     return (
@@ -35,7 +32,6 @@ export default function Search() {
                             }}
                         />
                     </InputGroup>
-
                 </div>
                 <div>
                     <DataTable />

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import data from '../../data/data.json';
 import { Modal, Button, InputGroup } from "react-bootstrap";
 
 export default function ReturnProduct(props) {
@@ -13,7 +12,6 @@ export default function ReturnProduct(props) {
     const [returnModal, setReturnModal] = useState(true);
 
     useEffect(() => {
-        console.log(props.status)
         setReturnModal(props.status);
     }, []);
 
@@ -21,7 +19,6 @@ export default function ReturnProduct(props) {
         setIsOpenReturn(!isOpenReturn);
         setReturnModal(!returnModal);
         window.location.reload();
-
     }
 
     function toggleModalReturnValueFinal() {

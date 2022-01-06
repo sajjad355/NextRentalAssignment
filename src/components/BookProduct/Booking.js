@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import data from '../../data/data.json';
+import React, { useState } from "react";
 import { Modal, Form, Button, InputGroup } from "react-bootstrap";
 
 export default function BookProduct(props) {
@@ -26,8 +25,6 @@ export default function BookProduct(props) {
     function toggleModalBookingValueCompltedFinal() {
         setIsOpenBookingvalueCompleted(!isOpenBookingValueCompleted);
         window.location.reload();
-        // setBookModal(false);
-
     }
 
     function toggleBookingValueCancel() {
@@ -35,9 +32,6 @@ export default function BookProduct(props) {
     }
     function toggleModalBookingValue() {
         if (productBooking && fromDate && toDate) {
-            var currentDate = new Date();
-            console.log(currentDate);
-            var startingDate = new Date(fromDate);
             var a = JSON.parse(localStorage.getItem("data")).filter(item => item.name + "/" + item.code === productBooking)
             const date1 = new Date(toDate);
             const date2 = new Date(fromDate);
@@ -61,7 +55,7 @@ export default function BookProduct(props) {
     }
     return (
 
-        <div className="App">{console.log(props.status)}       {console.log(bookModal)}
+        <div className="App">
 
             {/* Book Product Initialize */}
             <Modal
@@ -100,7 +94,7 @@ export default function BookProduct(props) {
                     {JSON.parse(localStorage.getItem("data")).filter(product => product.name + "/" + product.code === productBooking).map(products => (
                         <p style={{ fontSize: 22, fontFamily: "Lucida Console" }}>
                             <p>Name:&nbsp;{products.name}</p>
-                            <p>Rental Period:&nbsp;{products.minimum_rent_period}</p>{console.log(products.mileage)}
+                            <p>Rental Period:&nbsp;{products.minimum_rent_period}</p>
                             <p>Mileage:&nbsp;{products.mileage === null ? "N/A" : products.mileage}</p>
                             <p>Repair Needed:&nbsp;{products.needing_repair === true ? "Yes" : "No"}</p>
                         </p>
