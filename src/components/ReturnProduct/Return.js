@@ -127,19 +127,6 @@ export default function ReturnProduct(props) {
                         style={{ border: "0", fontSize: 22, fontFamily: "Lucida Handwriting", background: 'white', fontWeight: 'bold', marginBottom: 10 }}
                         disabled
                     /><br />
-                    <span style={{ fontSize: 22, fontFamily: "Lucida Console" }}>Is Repair Needed?&nbsp;</span>
-                    <input
-                        value={repair}
-                        style={{ border: "0", fontSize: 22, fontFamily: "Lucida Console", background: 'white', fontWeight: 'bold', marginBottom: 10 }}
-                        disabled
-                    /><br />
-                    <span style={{ fontSize: 22, fontFamily: "Lucida Console" }}>Minimum Rent Period&nbsp;</span>
-                    <input
-                        value={rentPeriod}
-                        style={{ border: "0", fontSize: 22, fontFamily: "Lucida Console", background: 'white', fontWeight: 'bold', marginBottom: 10 }}
-                        disabled
-
-                    /><br />
                 </Modal.Body>
 
                 <Modal.Footer>
