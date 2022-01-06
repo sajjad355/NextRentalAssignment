@@ -18,7 +18,7 @@ export default function DataTable() {
     return (
         <div className="App">
             <div className="">
-                <div style={{ marginRight: 20, border: '1px solid white' }} className="TableDesign">
+                <div style={{ marginRight: 20, border: '1px solid white', marginBottom: 10 }} className="TableDesign">
                     <Table responsive="sm" responsive="md" responsive="xs" responsive="lg" responsive="xl" striped hover>
                         <thead className="" style={{ backgroundColor: '#2621a0' }}>
                             <tr>
